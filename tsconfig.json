@@ -21,7 +21,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "scripts/generate-rss.js",
+    "scripts/generate-sitemap.js"  
   ],
   "exclude": [
     "node_modules"

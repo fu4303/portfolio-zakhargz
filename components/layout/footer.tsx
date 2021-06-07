@@ -1,4 +1,4 @@
-import siteConfig from "../../siteConfig.json";
+import siteConfig from '../../siteConfig.json'
 // import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
@@ -13,5 +13,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

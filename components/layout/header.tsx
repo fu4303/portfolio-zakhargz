@@ -1,20 +1,20 @@
-import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/router";
-import ToggleMode from "./toggle";
+import Link from 'next/link'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import ToggleMode from './toggle'
 
 let navMenu: Array<{ title: string; href: string }> = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  // { title: "Blog", href: "/blog" },
+  { title: 'Home', href: '/' },
+  { title: 'About', href: '/about' },
+  { title: 'Blog', href: '/blog' },
   // { title: "Portfolio", href: "/portfolio" },
-  { title: "Contact", href: "/contact" },
-];
+  { title: 'Contact', href: '/contact' },
+]
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <>
@@ -26,8 +26,8 @@ export default function Header() {
                 <span
                   className={`font-medium sm:m-4 sm:py-2 ${
                     router.asPath === menuItems.href
-                      ? "font-bold border-bl border-b-4 dark:border-bd text-lg"
-                      : "text-lg font-normal border-b-4 border-transparent hover:border-bl dark:hover:border-bd transition-all duration-500 ease-in-out"
+                      ? 'font-bold border-bl border-b-4 dark:border-bd text-lg'
+                      : 'text-lg font-normal border-b-4 border-transparent hover:border-bl dark:hover:border-bd transition-all duration-500 ease-in-out'
                   }`}
                 >
                   <Link href={menuItems.href}>{menuItems.title}</Link>
@@ -45,18 +45,9 @@ export default function Header() {
             onClick={() => setIsMenuOpen(true)}
           >
             <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
+              <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z" />
+              <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z" />
+              <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z" />
             </svg>
           </button>
           {isMenuOpen && (
@@ -91,7 +82,7 @@ export default function Header() {
                             <Link href={menuItems.href}>{menuItems.title}</Link>
                           </span>
                         </li>
-                      );
+                      )
                     })}
                   </ul>
                 </nav>
@@ -101,5 +92,5 @@ export default function Header() {
         </div>
       </div>
     </>
-  );
+  )
 }
