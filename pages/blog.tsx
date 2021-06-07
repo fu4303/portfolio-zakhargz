@@ -52,8 +52,8 @@ export default function BlogPage({ posts }: BlogProps) {
 
         <section className="pt-6 px-4 md:px-0">
           {!sorted.length && <p className="text-gray-600 dark:text-gray-400 mb-4">No posts found.</p>}
-          {sorted.map((post) => (
-            <ul className="pb-8">
+          {sorted.map((post, i) => (
+            <ul key={i} className="pb-8">
               <Link href={`/blog/${post.metadata.slug}`} passHref>
                 <article>
                   <h2 className="text-3xl font-bold pb-4">{post.metadata.title}</h2>
