@@ -23,7 +23,7 @@ const BlogPost = ({ post }: BlogPostProps) => {
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
-            <Image src={getAuthor(post.metadata.author).profile_pic} height={24} width={24} className="rounded-full" />
+            <Image src={getAuthor(post.metadata.author).profile_pic} alt="Zak Hargreaves" height={24} width={24} className="rounded-full" />
             <p className="text-sm text-gray-500 ml-2">
               {getAuthor(post.metadata.author).name}
               {' • '}
