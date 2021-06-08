@@ -15,4 +15,8 @@
   <url>
     <loc>https://hrgs.dev</loc>
   </url>
+
+  <url>
+    <loc>https://hrgs.dev/blog/Understanding-types-in-Typescript</loc>
+  </url>
 </urlset>

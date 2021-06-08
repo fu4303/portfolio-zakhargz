@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { getFiles, IFile } from '../lib/blogResources'
 import { ago } from '../lib/dateFormat'
-import { getAuthor } from '../lib/authors'
-
 interface BlogProps {
   posts: IFile[]
 }
@@ -60,7 +58,7 @@ export default function BlogPage({ posts }: BlogProps) {
                   <p className="pb-1">{post.metadata.summary}</p>
                   <div>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <Link href="/about">{getAuthor(post.metadata.author).name}</Link>
+                      <Link href="/about">{post.metadata.author}</Link>
                       {' • '}
                       {ago(post.metadata.publishedAt)}
                       {' • '}

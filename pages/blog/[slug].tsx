@@ -4,7 +4,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { getFile, getFilesInDirectory, IFile } from '../../lib/blogResources'
 import dayjs from 'dayjs'
 import Image from 'next/image'
-import { getAuthor } from '../../lib/authors'
+import siteConfig from '../../siteConfig.json'
 
 const editUrl = (slug: string) => `https://github.com/ZakHargz/hrgs-blog-dev/edit/main/data/blog/${slug}.mdx`
 const discussUrl = (slug: string) =>
@@ -23,9 +23,15 @@ const BlogPost = ({ post }: BlogPostProps) => {
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
-            <Image src={getAuthor(post.metadata.author).profile_pic} alt="Zak Hargreaves" height={24} width={24} className="rounded-full" />
+            <Image
+              src={siteConfig.site_owner_pic}
+              alt="Zak Hargreaves"
+              height={24}
+              width={24}
+              className="rounded-full"
+            />
             <p className="text-sm text-gray-500 ml-2">
-              {getAuthor(post.metadata.author).name}
+              (post.metadata.author)
               {' • '}
               <time dateTime={post.metadata.publishedAt}>
                 {dayjs(post.metadata.publishedAt).locale('en-gb').format('dddd, DD MMM YYYY')}{' '}
